@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Seven Star Printing Press</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo" onclick="scrollTo('home')">
+    <div class="nav-logo-mark"></div>
+    <div>
+      <div class="nav-logo-text">SEVEN STAR</div>
+      <div class="nav-logo-sub">PRINTING PRESS</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="active" onclick="navClick(this,'home')">Home</a></li>
+    <li><a href="#about" onclick="navClick(this,'about')">About</a></li>
+    <li><a href="#services" onclick="navClick(this,'services')">Services</a></li>
+    <li><a href="#gallery" onclick="navClick(this,'gallery')">Gallery</a></li>
+    <li><a href="#contact" onclick="navClick(this,'contact')">Contact</a></li>
+    <li><a href="#" onclick="openAdminLogin();return false">Admin</a></li>
+  </ul>
+  <a href="#order" class="nav-cta" onclick="navClick(null,'order')">Order Now</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" onclick="closeMenu();scrollTo('home')">Home</a>
+  <a href="#about" onclick="closeMenu();scrollTo('about')">About</a>
+  <a href="#services" onclick="closeMenu();scrollTo('services')">Services</a>
+  <a href="#gallery" onclick="closeMenu();scrollTo('gallery')">Gallery</a>
+  <a href="#order" onclick="closeMenu();scrollTo('order')">Order</a>
+  <a href="#contact" onclick="closeMenu();scrollTo('contact')">Contact</a>
+  <a href="#" onclick="closeMenu();openAdminLogin()">Admin Panel</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-text" aria-hidden="true">PRINT</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Premium Custom Printing Services</div>
+    <h1 class="hero-headline">
+      PRINT YOUR<em>VISION.</em>
+    </h1>
+    <p class="hero-body">From laser-precise sticker cutting to bespoke acrylic nameplates — we bring your brand to life with craftsmanship that stands out.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-primary" onclick="scrollTo('order')">Start Your Order</a>
+      <a href="#services" class="btn-outline" onclick="scrollTo('services')">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num" id="count-orders">0</div>
+        <div class="stat-label">Orders Completed</div>
+      </div>
+      <div>
+        <div class="stat-num" id="count-clients">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div>
+        <div class="stat-num" id="count-years">0</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Story</div>
+    <div class="about-grid">
+      <div class="about-img">
+        <div class="about-img-inner">
+          <div class="about-print-demo">
+            <div class="print-swatch" style="background:#d4a017;color:#0d0d0d">★</div>
+            <div class="print-swatch" style="background:#c0392b;color:#fff">★</div>
+            <div class="print-swatch" style="background:#0d0d0d;color:#d4a017">★</div>
+            <div class="print-swatch" style="background:#f7f4ef;color:#0d0d0d">★</div>
+            <div class="print-swatch" style="background:#2c3e50;color:#d4a017">★</div>
+            <div class="print-swatch" style="background:#27ae60;color:#fff">★</div>
+            <div class="print-swatch" style="background:#8e44ad;color:#fff">★</div>
+            <div class="print-swatch" style="background:#e67e22;color:#fff">★</div>
+            <div class="print-swatch" style="background:#1abc9c;color:#fff">★</div>
+          </div>
+          <div style="font-family:var(--font-display);font-size:18px;letter-spacing:4px;color:rgba(255,255,255,.3);margin-top:12px">COLOR IS CRAFT</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">Crafted with<br/>precision &amp; pride.</h2>
+        <div class="section-divider"></div>
+        <p>Seven Star Printing Press was founded on a simple belief: every business deserves print materials that make a lasting impression. We combine modern printing technology with meticulous attention to detail.</p>
+        <p>Based locally and serving clients nationally, we specialize in custom sticker cutting, laser cutting, T-shirt printing, and premium acrylic nameplates — tailored to your exact specifications.</p>
+        <div class="about-values">
+          <div class="value-card">
+            <strong>Precision First</strong>
+            <p>Laser-accurate cuts and colour-matched prints every single time.</p>
+          </div>
+          <div class="value-card">
+            <strong>Fast Turnaround</strong>
+            <p>Standard 3–5 day delivery, with express options available.</p>
+          </div>
+          <div class="value-card">
+            <strong>No Minimums</strong>
+            <p>Order one or ten thousand — same care goes into every piece.</p>
+          </div>
+          <div class="value-card">
+            <strong>File Support</strong>
+            <p>Our team reviews every design file before production begins.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card" onclick="scrollTo('order');setSvc('sticker-cutting')">
+        <div class="service-num">01</div>
+        <div class="service-icon-ring"><div class="service-icon">✂️</div></div>
+        <div class="service-title">Sticker Cutting</div>
+        <p class="service-desc">Custom die-cut and kiss-cut stickers in any shape. Vinyl-grade durability for indoor and outdoor use.</p>
+        <ul class="service-features">
+          <li>Kiss-cut &amp; die-cut options</li>
+          <li>Waterproof vinyl material</li>
+          <li>Gloss, matte &amp; clear finishes</li>
+          <li>Full CMYK colour printing</li>
+        </ul>
+        <button class="service-cta">Order Stickers</button>
+      </div>
+      <div class="service-card" onclick="scrollTo('order');setSvc('laser-cutting')">
+        <div class="service-num">02</div>
+        <div class="service-icon-ring"><div class="service-icon">🔆</div></div>
+        <div class="service-title">Laser Cutting</div>
+        <p class="service-desc">Precision laser cutting for wood, acrylic, cardstock, and leather. Complex shapes with hair-line accuracy.</p>
+        <ul class="service-features">
+          <li>0.1mm precision tolerance</li>
+          <li>Acrylic, wood, leather, card</li>
+          <li>Engraving &amp; etching</li>
+          <li>Custom sizes up to A0</li>
+        </ul>
+        <button class="service-cta">Order Laser Cut</button>
+      </div>
+      <div class="service-card" onclick="scrollTo('order');setSvc('tshirt-printing')">
+        <div class="service-num">03</div>
+        <div class="service-icon-ring"><div class="service-icon">👕</div></div>
+        <div class="service-title">T-shirt Printing</div>
+        <p class="service-desc">DTG, screen printing, and heat transfer. Vivid, wash-fast colours on any garment — perfect for teams and events.</p>
+        <ul class="service-features">
+          <li>DTG, screen print &amp; heat transfer</li>
+          <li>All fabric types accepted</li>
+          <li>Front, back &amp; sleeve prints</li>
+          <li>Pantone colour matching</li>
+        </ul>
+        <button class="service-cta">Order Shirts</button>
+      </div>
+      <div class="service-card" onclick="scrollTo('order');setSvc('acrylic-nameplate')">
+        <div class="service-num">04</div>
+        <div class="service-icon-ring"><div class="service-icon">🏷️</div></div>
+        <div class="service-title">Acrylic Nameplates</div>
+        <p class="service-desc">Premium engraved acrylic nameplates for offices, doors, and desks. Polished edges and UV-stable inks.</p>
+        <ul class="service-features">
+          <li>5mm cast acrylic standard</li>
+          <li>Multiple colour options</li>
+          <li>Laser engraved text &amp; logo</li>
+          <li>Wall-mount hardware included</li>
+        </ul>
+        <button class="service-cta">Order Nameplate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Work</div>
+    <h2 class="section-title">Product Gallery</h2>
+    <div class="section-divider"></div>
+    <div class="gallery-filter">
+      <button class="filter-btn active" onclick="filterGallery('all',this)">All Work</button>
+      <button class="filter-btn" onclick="filterGallery('sticker-cutting',this)">Sticker Cutting</button>
+      <button class="filter-btn" onclick="filterGallery('laser-cutting',this)">Laser Cutting</button>
+      <button class="filter-btn" onclick="filterGallery('tshirt-printing',this)">T-shirt Printing</button>
+      <button class="filter-btn" onclick="filterGallery('acrylic-nameplate',this)">Acrylic Nameplates</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section id="order" class="alt-bg">
+  <div class="section-inner">
+    <div class="order-layout">
+      <div class="order-info">
+        <div class="section-eyebrow">Place an Order</div>
+        <h2 class="section-title" style="color:var(--white)">Let's create something great.</h2>
+        <div class="section-divider"></div>
+        <p>Fill in the form and we'll review your order within 2 business hours. You'll receive a confirmation email with your order ID and estimated completion date.</p>
+        <ul class="order-steps-list">
+          <li class="order-step-item">
+            <div class="step-circle">1</div>
+            <div class="step-text">
+              <strong>Contact Details</strong>
+              <span>Your name, email &amp; phone number</span>
+            </div>
+          </li>
+          <li class="order-step-item">
+            <div class="step-circle">2</div>
+            <div class="step-text">
+              <strong>Service &amp; Quantity</strong>
+              <span>Choose your service and how many you need</span>
+            </div>
+          </li>
+          <li class="order-step-item">
+            <div class="step-circle">3</div>
+            <div class="step-text">
+              <strong>Upload Design Files</strong>
+              <span>AI, PDF, PNG or JPG — we accept all formats</span>
+            </div>
+          </li>
+          <li class="order-step-item">
+            <div class="step-circle">4</div>
+            <div class="step-text">
+              <strong>Review &amp; Confirm</strong>
+              <span>Check all details before submitting</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="form-card">
+          <div class="form-progress" id="form-progress">
+            <div class="progress-step active" id="prog-0"></div>
+            <div class="progress-step" id="prog-1"></div>
+            <div class="progress-step" id="prog-2"></div>
+            <div class="progress-step" id="prog-3"></div>
+          </div>
+          <div class="progress-labels">
+            <span class="progress-label active" id="plabel-0">Contact</span>
+            <span class="progress-label" id="plabel-1">Service</span>
+            <span class="progress-label" id="plabel-2">Files</span>
+            <span class="progress-label" id="plabel-3">Review</span>
+          </div>
+
+          <!-- Step 1: Contact -->
+          <div class="form-step active" id="step-0">
+            <div class="field-row">
+              <div class="field-group">
+                <label for="f-name">Full Name *</label>
+                <input type="text" id="f-name" placeholder="Your full name"/>
+                <div class="error-msg" id="err-name"></div>
+              </div>
+              <div class="field-group">
+                <label for="f-phone">Phone Number *</label>
+                <input type="tel" id="f-phone" placeholder="+92 300 1234567"/>
+                <div class="error-msg" id="err-phone"></div>
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="f-email">Email Address *</label>
+              <input type="email" id="f-email" placeholder="you@example.com"/>
+              <div class="error-msg" id="err-email"></div>
+            </div>
+            <div class="field-group">
+              <label for="f-company">Company / Brand Name</label>
+              <input type="text" id="f-company" placeholder="Optional"/>
+            </div>
+            <div class="form-nav">
+              <span></span>
+              <button class="btn-primary" onclick="nextStep(0)">Next: Service →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Service -->
+          <div class="form-step" id="step-1">
+            <div class="field-group">
+              <label>Select Service *</label>
+              <div class="service-select-grid" id="svc-grid">
+                <div class="service-opt" data-svc="sticker-cutting" onclick="selectSvc(this)">
+                  <div class="service-opt-icon">✂️</div>
+                  <div class="service-opt-name">Sticker Cutting</div>
+                </div>
+                <div class="service-opt" data-svc="laser-cutting" onclick="selectSvc(this)">
+                  <div class="service-opt-icon">🔆</div>
+                  <div class="service-opt-name">Laser Cutting</div>
+                </div>
+                <div class="service-opt" data-svc="tshirt-printing" onclick="selectSvc(this)">
+                  <div class="service-opt-icon">👕</div>
+                  <div class="service-opt-name">T-shirt Printing</div>
+                </div>
+                <div class="service-opt" data-svc="acrylic-nameplate" onclick="selectSvc(this)">
+                  <div class="service-opt-icon">🏷️</div>
+                  <div class="service-opt-name">Acrylic Nameplate</div>
+                </div>
+              </div>
+              <div class="error-msg" id="err-svc"></div>
+            </div>
+            <div class="field-group">
+              <label for="f-size">Size / Dimensions</label>
+              <input type="text" id="f-size" placeholder="e.g. 10cm × 5cm or A4"/>
+            </div>
+            <div class="field-group">
+              <label>Quantity *</label>
+              <div class="qty-row">
+                <button class="qty-btn" onclick="changeQty(-1)" type="button">−</button>
+                <input type="number" id="f-qty" value="1" min="1" class="qty-input"/>
+                <button class="qty-btn" onclick="changeQty(1)" type="button">+</button>
+              </div>
+              <div class="error-msg" id="err-qty"></div>
+            </div>
+            <div class="field-group">
+              <label for="f-notes">Special Instructions</label>
+              <textarea id="f-notes" placeholder="Colour preferences, material choice, finishing details…"></textarea>
+            </div>
+            <div class="form-nav">
+              <button class="btn-outline" onclick="prevStep(1)">← Back</button>
+              <button class="btn-primary" onclick="nextStep(1)">Next: Upload →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Upload -->
+          <div class="form-step" id="step-2">
+            <div class="field-group">
+              <label>Design Files *</label>
+              <div class="upload-zone" id="upload-zone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                <input type="file" id="file-input" multiple accept=".ai,.pdf,.png,.jpg,.jpeg,.svg,.eps" onchange="handleFiles(this.files)"/>
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">Drop files here or click to browse</div>
+                <div class="upload-hint">Accepts AI, PDF, SVG, PNG, JPG, EPS — Max 20 MB each</div>
+              </div>
+              <div class="uploaded-files" id="uploaded-files"></div>
+              <div class="error-msg" id="err-files"></div>
+            </div>
+            <div class="field-group">
+              <label for="f-deadline">Preferred Deadline</label>
+              <input type="date" id="f-deadline"/>
+            </div>
+            <div class="form-nav">
+              <button class="btn-outline" onclick="prevStep(2)">← Back</button>
+              <button class="btn-primary" onclick="nextStep(2)">Review Order →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Review -->
+          <div class="form-step" id="step-3">
+            <div id="order-summary"></div>
+            <div class="form-nav">
+              <button class="btn-outline" onclick="prevStep(3)">← Back</button>
+              <button class="btn-primary" onclick="submitOrder()" id="submit-btn">Place Order ★</button>
+            </div>
+          </div>
+
+          <!-- Success -->
+          <div class="form-step" id="step-success">
+            <div class="success-screen">
+              <div class="success-icon">⭐</div>
+              <h3 style="font-family:var(--font-display);font-size:28px;color:var(--white);letter-spacing:1px">Order Placed!</h3>
+              <p style="color:rgba(255,255,255,.5);margin-top:8px;font-size:14px">We've received your order and will be in touch within 2 business hours.</p>
+              <div class="success-id" id="success-id">ORDER #SSP-00000</div>
+              <p style="font-size:13px;color:rgba(255,255,255,.4)">A confirmation has been sent to your email.</p>
+              <div style="display:flex;gap:12px;margin-top:28px;justify-content:center;flex-wrap:wrap">
+                <button class="btn-primary" onclick="resetForm()">Place Another Order</button>
+                <a href="https://wa.me/923001234567" target="_blank" class="btn-outline">Chat on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">Get in Touch</div>
+    <h2 class="section-title">Let's Talk.</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Visit Us</strong>
+            <span>Shop 12, Press Market, Main Bazaar,<br/>Lahore, Punjab, Pakistan</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Call / WhatsApp</strong>
+            <span>+92 300 123 4567</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>hello@sevenstarpress.pk</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Business Hours</strong>
+            <span>Mon – Sat: 9:00 AM – 8:00 PM<br/>Sunday: Closed</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="field-group">
+          <label for="c-name">Your Name *</label>
+          <input type="text" id="c-name" placeholder="Full name"/>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="c-email">Email *</label>
+            <input type="email" id="c-email" placeholder="you@example.com"/>
+          </div>
+          <div class="field-group">
+            <label for="c-phone">Phone</label>
+            <input type="tel" id="c-phone" placeholder="+92 300…"/>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="c-subject">Subject</label>
+          <select id="c-subject">
+            <option value="">Select a topic</option>
+            <option>Price inquiry</option>
+            <option>Order status</option>
+            <option>Custom project</option>
+            <option>Bulk / wholesale</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="c-msg">Message *</label>
+          <textarea id="c-msg" rows="5" placeholder="Tell us about your project…"></textarea>
+        </div>
+        <button class="btn-primary contact-submit" onclick="submitContact()">Send Message</button>
+        <div class="contact-success" id="contact-success">
+          <p>✓ Message sent! We'll reply within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="nav-logo-mark"></div>
+          <div>
+            <div class="nav-logo-text">SEVEN STAR</div>
+            <div class="nav-logo-sub">PRINTING PRESS</div>
+          </div>
+        </div>
+        <p class="footer-desc">Premium custom printing services since 2015. Quality you can hold in your hands.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#" onclick="scrollTo('services')">Sticker Cutting</a></li>
+          <li><a href="#" onclick="scrollTo('services')">Laser Cutting</a></li>
+          <li><a href="#" onclick="scrollTo('services')">T-shirt Printing</a></li>
+          <li><a href="#" onclick="scrollTo('services')">Acrylic Nameplates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" onclick="scrollTo('home')">Home</a></li>
+          <li><a href="#" onclick="scrollTo('about')">About Us</a></li>
+          <li><a href="#" onclick="scrollTo('gallery')">Gallery</a></li>
+          <li><a href="#" onclick="scrollTo('order')">Place Order</a></li>
+          <li><a href="#" onclick="scrollTo('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+923001234567">+92 300 123 4567</a></li>
+          <li><a href="mailto:hello@sevenstarpress.pk">hello@sevenstarpress.pk</a></li>
+          <li><a href="https://wa.me/923001234567" target="_blank">WhatsApp Chat</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Seven Star Printing Press. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/923001234567?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20your%20printing%20services." target="_blank" class="wa-btn" aria-label="Chat on WhatsApp">
+  <span class="wa-tooltip">Chat with us!</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ADMIN LOGIN -->
+<div id="admin-login">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="nav-logo-mark" style="margin:0 auto 12px;width:44px;height:44px"></div>
+    </div>
+    <div class="login-title">ADMIN</div>
+    <div class="login-sub">SEVEN STAR PRINTING PRESS</div>
+    <div class="login-error" id="login-error">Invalid credentials. Please try again.</div>
+    <div class="field-group">
+      <label for="admin-user">Username</label>
+      <input type="text" id="admin-user" placeholder="admin" autocomplete="username"/>
+    </div>
+    <div class="field-group">
+      <label for="admin-pass">Password</label>
+      <input type="password" id="admin-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
+    </div>
+    <button class="btn-primary" style="width:100%;margin-top:8px" onclick="doLogin()">Sign In</button>
+    <p style="text-align:center;margin-top:16px;font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,.2)">Demo: admin / admin123</p>
+    <button onclick="document.getElementById('admin-login').classList.remove('show')" style="display:block;margin:16px auto 0;background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:1px">← Back to site</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-panel">
+  <div class="admin-topbar">
+    <div class="admin-brand">
+      SEVEN STAR <span class="admin-brand-tag">ADMIN</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <span style="font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.3)">Logged in as <span style="color:var(--star)">admin</span></span>
+      <button onclick="logoutAdmin()" class="admin-action">Logout</button>
+    </div>
+  </div>
+  <div class="admin-layout">
+    <div class="admin-sidebar">
+      <a class="admin-nav-item active" onclick="adminTab('dashboard',this)">
+        <span class="admin-nav-icon">📊</span> Dashboard
+      </a>
+      <a class="admin-nav-item" onclick="adminTab('orders',this)">
+        <span class="admin-nav-icon">📦</span> Orders
+      </a>
+      <a class="admin-nav-item" onclick="adminTab('gallery',this)">
+        <span class="admin-nav-icon">🖼</span> Gallery
+      </a>
+      <a class="admin-nav-item" onclick="adminTab('products',this)">
+        <span class="admin-nav-icon">🏷</span> Products
+      </a>
+      <a class="admin-nav-item" onclick="adminTab('customers',this)">
+        <span class="admin-nav-icon">👤</span> Customers
+      </a>
+    </div>
+    <div class="admin-main">
+      <!-- Dashboard -->
+      <div class="admin-tab active" id="tab-dashboard">
+        <div class="admin-section-title">Dashboard</div>
+        <div class="admin-section-sub">OVERVIEW — JUNE 2025</div>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="stat-card-num">47</div><div class="stat-card-label">Total Orders</div></div>
+          <div class="stat-card"><div class="stat-card-num">12</div><div class="stat-card-label">Pending</div></div>
+          <div class="stat-card"><div class="stat-card-num">83</div><div class="stat-card-label">Clients</div></div>
+          <div class="stat-card"><div class="stat-card-num">₨94k</div><div class="stat-card-label">Revenue</div></div>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Service</th><th>Status</th><th>Date</th><th>Action</th></tr></thead>
+            <tbody id="dash-recent-orders"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Orders -->
+      <div class="admin-tab" id="tab-orders">
+        <div class="admin-section-title">Orders</div>
+        <div class="admin-section-sub">MANAGE ALL ORDERS</div>
+        <div class="admin-filters">
+          <button class="filter-btn active" onclick="filterOrders('all',this)">All</button>
+          <button class="filter-btn" onclick="filterOrders('pending',this)">Pending</button>
+          <button class="filter-btn" onclick="filterOrders('confirmed',this)">Confirmed</button>
+          <button class="filter-btn" onclick="filterOrders('in_production',this)">In Production</button>
+          <button class="filter-btn" onclick="filterOrders('ready',this)">Ready</button>
+          <button class="filter-btn" onclick="filterOrders('delivered',this)">Delivered</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Service</th><th>Qty</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Gallery -->
+      <div class="admin-tab" id="tab-gallery">
+        <div class="admin-section-title">Gallery</div>
+        <div class="admin-section-sub">MODERATE GALLERY IMAGES</div>
+        <div class="gallery-admin-grid" id="gallery-admin-grid"></div>
+      </div>
+      <!-- Products -->
+      <div class="admin-tab" id="tab-products">
+        <div class="admin-section-title">Products & Pricing</div>
+        <div class="admin-section-sub">MANAGE SERVICE CATALOGUE</div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Service</th><th>Base Price</th><th>Unit</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td>Sticker Cutting</td><td>₨ 50</td><td>per sticker</td><td><span class="status-badge status-ready">Active</span></td><td><button class="admin-action">Edit</button></td></tr>
+              <tr><td>Laser Cutting</td><td>₨ 200</td><td>per piece</td><td><span class="status-badge status-ready">Active</span></td><td><button class="admin-action">Edit</button></td></tr>
+              <tr><td>T-shirt Printing</td><td>₨ 850</td><td>per shirt</td><td><span class="status-badge status-ready">Active</span></td><td><button class="admin-action">Edit</button></td></tr>
+              <tr><td>Acrylic Nameplate</td><td>₨ 1,200</td><td>per piece</td><td><span class="status-badge status-ready">Active</span></td><td><button class="admin-action">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Customers -->
+      <div class="admin-tab" id="tab-customers">
+        <div class="admin-section-title">Customers</div>
+        <div class="admin-section-sub">ALL REGISTERED CUSTOMERS</div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Orders</th><th>Joined</th></tr></thead>
+            <tbody id="customers-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
